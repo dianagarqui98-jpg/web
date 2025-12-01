@@ -1,0 +1,92 @@
+
+CREATE DATABASE IF NOT EXISTS angel_divino;
+USE angel_divino;
+CREATE TABLE clientes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(150) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    telefono CHAR(9) NOT NULL,
+    dni CHAR(8) NOT NULL
+);
+
+
+CREATE TABLE buses (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
+    capacidad INT NOT NULL,
+    cantidad_piso INT NOT NULL
+);
+
+
+CREATE TABLE viajes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    bus_id INT NOT NULL,
+    origen VARCHAR(100) NOT NULL,
+    destino VARCHAR(100) NOT NULL,
+    fecha DATE NOT NULL,
+    horario TIME NOT NULL,
+    precio DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (bus_id) REFERENCES buses(id)
+);
+
+
+CREATE TABLE asiento_disponibilidad (
+    viaje_id INT NOT NULL,
+    asiento_num INT NOT NULL,
+    ocupado TINYINT(1) DEFAULT 0,
+    PRIMARY KEY(viaje_id, asiento_num),
+    FOREIGN KEY (viaje_id) REFERENCES viajes(id)
+);
+
+
+CREATE TABLE pasajes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cliente_id INT NOT NULL,
+    viaje_id INT NOT NULL,
+    cantidad INT NOT NULL,
+    total DECIMAL(10,2) NOT NULL,
+    estado VARCHAR(50) NOT NULL DEFAULT 'confirmado',
+    creado_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (cliente_id) REFERENCES clientes(id),
+    FOREIGN KEY (viaje_id) REFERENCES viajes(id)
+);
+
+
+CREATE TABLE pasajes_asientos (
+    pasaje_id INT NOT NULL,
+    asiento_num INT NOT NULL,
+    PRIMARY KEY(pasaje_id, asiento_num),
+    FOREIGN KEY (pasaje_id) REFERENCES pasajes(id)
+);
+
+
+INSERT INTO buses (nombre, capacidad) VALUES 
+('Bus A', 48),
+('Bus B', 40);
+
+
+INSERT INTO viajes (bus_id, origen, destino, fecha, horario, precio) VALUES
+(1, 'Chiclayo', 'Lima', '2025-12-01', '08:00:00', 50.00),
+(1, 'Chiclayo', 'Lima', '2025-12-01', '12:00:00', 50.00),
+(2, 'Piura', 'Trujillo', '2025-12-01', '09:00:00', 40.00),
+(2, 'Piura', 'Trujillo', '2025-12-01', '15:00:00', 40.00);
+
+
+INSERT INTO asiento_disponibilidad (viaje_id, asiento_num)
+SELECT v.id, n.n
+FROM viajes v
+JOIN (SELECT 1 n UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+      UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8
+      UNION ALL SELECT 9 UNION ALL SELECT 10
+      UNION ALL SELECT 11 UNION ALL SELECT 12 UNION ALL SELECT 13 UNION ALL SELECT 14
+      UNION ALL SELECT 15 UNION ALL SELECT 16 UNION ALL SELECT 17 UNION ALL SELECT 18
+      UNION ALL SELECT 19 UNION ALL SELECT 20
+      UNION ALL SELECT 21 UNION ALL SELECT 22 UNION ALL SELECT 23 UNION ALL SELECT 24
+      UNION ALL SELECT 25 UNION ALL SELECT 26 UNION ALL SELECT 27 UNION ALL SELECT 28
+      UNION ALL SELECT 29 UNION ALL SELECT 30
+      UNION ALL SELECT 31 UNION ALL SELECT 32 UNION ALL SELECT 33 UNION ALL SELECT 34
+      UNION ALL SELECT 35 UNION ALL SELECT 36 UNION ALL SELECT 37 UNION ALL SELECT 38
+      UNION ALL SELECT 39 UNION ALL SELECT 40
+      UNION ALL SELECT 41 UNION ALL SELECT 42 UNION ALL SELECT 43 UNION ALL SELECT 44
+      UNION ALL SELECT 45 UNION ALL SELECT 46 UNION ALL SELECT 47 UNION ALL SELECT 48) n
+WHERE n.n <= (SELECT capacidad FROM buses WHERE id = v.bus_id);

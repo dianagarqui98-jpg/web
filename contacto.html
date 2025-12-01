@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Angel Divino</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-overlay">
+            <h1>Contacto</h1>
+            <nav>
+                <a href="index.html">Información</a>
+                <a href="compra_step1.php">Comprar Pasajes</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="container contact">
+            <h2>¿Necesitas ayuda? Déjanos tus datos y un asesor te contactará</h2>
+            <div class="contact-form-wrap">
+                <form class="form-contacto">
+                    <label for="nombre-contacto">Nombre completo:</label>
+                    <input type="text" id="nombre-contacto" name="nombre-contacto" required placeholder="Escribe tu nombre">
+                    <label for="email-contacto">Correo electrónico:</label>
+                    <input type="email" id="email-contacto" name="email-contacto" required placeholder="ejemplo@correo.com">
+                    <label for="telefono-contacto">Teléfono:</label>
+                    <input type="tel" id="telefono-contacto" name="telefono-contacto" required placeholder="Tu número de contacto">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" required placeholder="¿En qué podemos ayudarte?"></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+                <div class="contact-info-mapa">
+                    <div class="contact-info">
+                        <p><strong>¿Dónde nos puedes ubicar?</strong></p>
+                        <ul>
+                            <li><img src="https://cdn-icons-png.flaticon.com/512/61/61088.png" alt="Teléfono" class="icon"> Teléfono: (601) 123-4567</li>
+                            <li><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Correo" class="icon"> Email: info@angeldivino.com</li>
+                            <li><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Dirección" class="icon"> Dirección: Calle Principal #123, Ciudad</li>
+                        </ul>
+                    </div>
+                    <div class="contact-mapa">
+                        <p><strong>Ubicación en el mapa:</strong></p>
+                        <iframe src="https://www.google.com/maps?q=Chiclayo,+Peru&output=embed" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        &copy; 2025 Transportes Angel Divino. Todos los derechos reservados.
+    </footer>
+</body>
+</html>

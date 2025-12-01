@@ -1,0 +1,1091 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f6fa;
+    color: #222;
+    line-height: 1.6;
+}
+
+.hero {
+    position: relative;
+    height: 350px;
+    background: url('https://pbs.twimg.com/media/FscaNYzXoAE4o6W.jpg') center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.55);
+    padding: 40px 60px;
+    border-radius: 16px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    max-width: 700px;    
+    width: 100%;          
+    margin: 0 auto;     
+    min-width: 320px;     
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+}
+
+.btn-compra {
+    background: #ff9800;
+    color: #fff;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    transition: background 0.2s;
+}
+
+.btn-compra:hover {
+    background: #e67c00;
+}
+
+nav {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    color: #222;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    min-width: 140px;
+    text-align: center;
+    transition: background 0.2s, color 0.2s;
+    display: inline-block;
+}
+
+nav a:hover, nav a:focus {
+    background: #ff9800;
+    color: #fff;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    padding: 32px 24px;
+}
+
+h2 {
+    color: #ff9800;
+    margin-bottom: 18px;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.services {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.service {
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding: 24px;
+    flex: 1 1 220px;
+    min-width: 220px;
+    max-width: 300px;
+    transition: box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-img {
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(255,152,0,0.10);
+}
+
+.service:hover {
+    box-shadow: 0 6px 24px rgba(255,152,0,0.12);
+}
+
+.service h3 {
+    color: #e67c00;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.compra-section {
+    background: linear-gradient(120deg, #fff 70%, #ffe0b2 100%);
+    border: 2px solid #ff9800;
+    box-shadow: 0 4px 24px rgba(255,152,0,0.08);
+}
+
+.form-pasajes {
+    display: grid;
+    gap: 18px;
+    margin-bottom: 32px;
+    max-width: 500px;
+}
+
+.form-pasajes label {
+    font-weight: 500;
+    color: #e67c00;
+}
+
+.form-pasajes input,
+.form-pasajes select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    background: #f7f7f7;
+    transition: border 0.2s;
+}
+
+.form-pasajes input:focus,
+.form-pasajes select:focus {
+    border: 1.5px solid #ff9800;
+    outline: none;
+}
+
+.form-pasajes .btn-compra {
+    width: 100%;
+    margin-top: 8px;
+    font-size: 1.1rem;
+}
+
+.compra-info {
+    background: #fff3e0;
+    border-left: 4px solid #ff9800;
+    padding: 18px 24px;
+    border-radius: 8px;
+    color: #e67c00;
+    box-shadow: 0 2px 8px rgba(255,152,0,0.08);
+}
+
+.compra-info h3 {
+    margin-bottom: 8px;
+}
+
+.compra-apartado {
+    margin-bottom: 32px;
+    padding: 24px 0;
+    border-bottom: 1px solid #ffe0b2;
+}
+
+.bus-seats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 18px 0;
+}
+
+.bus-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 12px;
+}
+
+.seat {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.seat input[type="radio"] {
+    display: none;
+}
+
+.seat input[type="checkbox"] {
+    display: none;
+}
+
+.seat span {
+    display: block;
+    width: 44px;
+    height: 44px;
+    background: #f7f7f7;
+    border: 2px solid #ff9800;
+    border-radius: 12px;
+    text-align: center;
+    line-height: 44px;
+    font-weight: bold;
+    color: #e67c00;
+    transition: background 0.2s, border 0.2s, color 0.2s;
+    font-size: 1.05rem;
+}
+
+.seat input[type="radio"]:checked + span {
+    background: #ff9800;
+    color: #fff;
+    border: 2px solid #e67c00;
+    box-shadow: 0 0 8px #ff9800;
+}
+
+.seat input[type="checkbox"]:checked + span {
+    background: #ff9800;
+    color: #fff;
+    border: 2px solid #e67c00;
+    box-shadow: 0 0 8px #ff9800;
+}
+
+.seat.ventana span {
+    border: 2px solid #1976d2;
+}
+
+.seat:hover span {
+    background: #ffe0b2;
+}
+
+.seat.ocupado span {
+    background: #ddd;
+    color: #aaa;
+    border: 2px solid #bbb;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+.seat input[type="radio"]:disabled + span {
+    background: #ddd;
+    color: #aaa;
+    border: 2px solid #bbb;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+.contact ul {
+    list-style: none;
+    margin-top: 12px;
+}
+
+.contact li {
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+    color: #333;
+}
+
+.contact-info-mapa {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.contact-info {
+    min-width: 220px;
+    font-size: 1.08rem;
+}
+
+.contact-mapa {
+    min-width: 400px;
+    max-width: 500px;
+    flex: 1;
+}
+
+.contact-mapa iframe {
+    width: 100%;
+    height: 260px;
+    border-radius: 12px;
+    border: 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 900px) {
+    .contact-info-mapa {
+        flex-direction: column;
+        gap: 24px;
+        align-items: stretch;
+    }
+    .contact-mapa {
+        max-width: 100%;
+    }
+}
+
+footer {
+    background: #ff9800;
+    color: #fff;
+    text-align: center;
+    padding: 18px 0;
+    font-size: 1rem;
+    margin-top: 40px;
+    letter-spacing: 1px;
+    border-radius: 0 0 16px 16px;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1.5px solid #ff9800;
+    font-size: 1rem;
+    background: #f7f7f7;
+    margin-bottom: 18px;
+    width: 100%;
+    transition: border 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(255,152,0,0.06);
+}
+.form-contacto input:focus,
+.form-contacto textarea:focus {
+    border: 2px solid #e67c00;
+    box-shadow: 0 0 8px #ff9800;
+    outline: none;
+}
+.form-contacto button {
+    background: #ff9800;
+    color: #fff;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 24px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    transition: background 0.2s;
+    margin-top: 8px;
+}
+
+.form-contacto button:hover {
+    background: #e67c00;
+}
+
+.contact-form-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.contact-info ul {
+    margin-top: 24px;
+    font-size: 1.05rem;
+}
+
+.contact-info .icon {
+    width: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+@media (max-width: 900px) {
+    .container {
+        margin: 24px 8px;
+        padding: 18px 8px;
+    }
+    .services {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .hero-overlay {
+        padding: 24px 8px;
+    }
+    .services, .ticket-types {
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
+    .contact-form-wrap {
+        flex-direction: column;
+        gap: 16px;
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        height: 220px;
+    }
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    nav {
+        gap: 12px;
+        font-size: 0.95rem;
+        padding: 10px 0;
+    }
+    nav a {
+        min-width: 90px;
+        font-size: 0.95rem;
+        padding: 6px 8px;
+    }
+    .container {
+        padding: 10px 4px;
+    }
+}
+
+.horarios-disponibles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 18px;
+    justify-content: center;
+}
+
+.horario-btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.horario-btn input[type="radio"] {
+    display: none;
+}
+
+.horario-btn span {
+    display: inline-block;
+    background: #fff3e0;
+    color: #e67c00;
+    border: 2px solid #ff9800;
+    border-radius: 18px;
+    padding: 10px 24px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    box-shadow: 0 2px 8px rgba(255,152,0,0.08);
+}
+
+.horario-btn input[type="radio"]:checked + span {
+    background: #ff9800;
+    color: #fff;
+    border: 2px solid #e67c00;
+    box-shadow: 0 0 8px #ff9800;
+}
+
+.horario-btn:hover span {
+    background: #ffe0b2;
+}
+
+.ticket-types {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-bottom: 32px;
+    width: 100%;
+}
+
+.ticket-type {
+    background: #fff3e0;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(255,152,0,0.10);
+    padding: 28px 30px;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
+    text-align: center;
+    cursor: pointer;
+    transition: box-shadow 0.2s, border 0.2s;
+    border: 2px solid transparent;
+    font-size: 1.18rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ticket-type img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 12px rgba(255,152,0,0.12);
+}
+
+.ticket-type h3 {
+    color: #e67c00;
+    margin-bottom: 12px;
+    font-size: 1.25rem;
+}
+
+.ticket-type p {
+    font-size: 1.08rem;
+}
+
+.ticket-type input[type="radio"] {
+    display: none;
+}
+
+.ticket-type:has(input[type="radio"]:checked) {
+    border: 3px solid #ff9800;
+    box-shadow: 0 0 0 3px #ffe0b2;
+}
+
+@media (max-width: 500px) {
+    .ticket-types {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .ticket-types {
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+    }
+}
+
+.datos-pasajero {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.datos-pasajero label {
+    font-size: 1.08rem;
+    font-weight: 500;
+    color: #e67c00;
+    margin-bottom: 2px;
+}
+
+.datos-pasajero input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1.5px solid #ff9800;
+    font-size: 1rem;
+    background: #f7f7f7;
+    transition: border 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(255,152,0,0.06);
+}
+
+.datos-pasajero input:focus {
+    border: 2px solid #e67c00;
+    box-shadow: 0 0 8px #ff9800;
+    outline: none;
+}
+
+.bus-silueta {
+    background: #e3f2fd;
+    border-radius: 18px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 12px rgba(33,150,243,0.08);
+    position: relative;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bus-silueta h4 {
+    margin: 12px 0 8px 0;
+    color: #1976d2;
+    font-size: 1.1rem;
+}
+
+.row.bus-silueta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    .col-sm-6 {
+        width: 48%;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-lg-4 {
+        width: 32%;
+    }
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-start {
+    justify-content: flex-start;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.mt-2 {
+    margin-top: 12px;
+}
+.mt-sm-4 {
+    margin-top: 24px;
+}
+.mt-lg-0 {
+    margin-top: 0;
+}
+
+.bus-floor {
+    display: grid;
+    grid-template-columns: repeat(4, 48px);
+    gap: 14px;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.seat input[type="checkbox"] {
+    display: none;
+}
+
+.seat span {
+    display: block;
+    width: 44px;
+    height: 44px;
+    background: #f7f7f7;
+    border: 2px solid #ff9800;
+    border-radius: 12px;
+    text-align: center;
+    line-height: 44px;
+    font-weight: bold;
+    color: #e67c00;
+    transition: background 0.2s, border 0.2s, color 0.2s;
+    font-size: 1.05rem;
+}
+
+.seat input[type="checkbox"]:checked + span {
+    background: #ff9800;
+    color: #fff;
+    border: 2px solid #1976d2;
+    box-shadow: 0 0 8px #1976d2;
+}
+
+.seat.ventana span {
+    border: 2px solid #1976d2;
+}
+
+.seat:hover span {
+    background: #ffe0b2;
+}
+
+@media (max-width: 900px) {
+    .row.bus-silueta {
+        flex-direction: column;
+        gap: 16px;
+        align-items: stretch;
+    }
+    .col-sm-6, .col-lg-4 {
+        width: 100%;
+    }
+}
+
+.bus-compra {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.bus-info {
+    min-width: 260px;
+    max-width: 320px;
+    background: #fff3e0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(255,152,0,0.08);
+    padding: 18px;
+    font-size: 1rem;
+}
+
+.info-viaje h4 {
+    color: #e67c00;
+    margin-bottom: 10px;
+}
+
+.info-viaje ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px 0;
+}
+
+.info-viaje li {
+    margin-bottom: 6px;
+}
+
+.leyenda-asientos {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin-top: 12px;
+    font-size: 0.98rem;
+}
+
+.leyenda-asientos .asiento {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.leyenda-asientos .ocupado {
+    background: #444;
+    border: 2px solid #444;
+}
+.leyenda-asientos .seleccionado {
+    background: #ff9800;
+    border: 2px solid #e67c00;
+}
+.leyenda-asientos .disponible {
+    background: #fff;
+    border: 2px solid #ff9800;
+}
+
+.bus-silueta-grande {
+    background: #e3f2fd;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(33,150,243,0.08);
+    min-width: 320px;
+    max-width: 600px;
+}
+
+.bus-piso {
+    margin-bottom: 24px;
+}
+
+.piso-label {
+    font-weight: bold;
+    color: #1976d2;
+    margin-bottom: 8px;
+    font-size: 1.08rem;
+}
+
+.bus-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 48px);
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.asiento {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.asiento input[type="checkbox"] {
+    display: none;
+}
+
+.asiento span {
+    display: block;
+    width: 44px;
+    height: 44px;
+    background: #fff;
+    border: 2px solid #ff9800;
+    border-radius: 12px;
+    text-align: center;
+    line-height: 44px;
+    font-weight: bold;
+    color: #e67c00;
+    font-size: 1.05rem;
+    transition: background 0.2s, border 0.2s, color 0.2s;
+}
+
+.asiento input[type="checkbox"]:checked + span {
+    background: #ff9800;
+    color: #fff;
+    border: 2px solid #e67c00;
+    box-shadow: 0 0 8px #ff9800;
+}
+
+.asiento.ocupado span,
+.asiento input[type="checkbox"]:disabled + span {
+    background: #444;
+    color: #fff;
+    border: 2px solid #444;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+.asiento:hover span {
+    background: #ffe0b2;
+}
+
+@media (max-width: 900px) {
+    .bus-compra {
+        flex-direction: column;
+        gap: 24px;
+        align-items: stretch;
+    }
+    .bus-silueta-grande {
+        max-width: 100%;
+        min-width: 0;
+    }
+}
+
+.video-embed {
+    display: block;
+    margin: 32px auto 24px auto;
+    max-width: 560px;
+    width: 100%;
+    height: 310px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+
+
+
+
+
+
+
+.compra-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px;
+    font-family: 'Arial', sans-serif;
+}
+
+.viaje-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: box-shadow 0.2s ease;
+}
+
+.viaje-item:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.viaje-meta, .viaje-price {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.asientos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.asiento {
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.asiento input[type="checkbox"] {
+    display: none;
+}
+
+.asiento label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #fff;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.asiento input[type="checkbox"]:checked + label {
+    background: #ff8c00;
+    border-color: #ff8c00;
+    color: #fff;
+}
+
+.asiento label.ocupado {
+    background: #555;
+    cursor: not-allowed;
+    color: #fff;
+}
+
+
+
+
+
+
+/* Contenedor del paso */
+.compra-paso {
+    max-width: 500px;
+    margin: 40px auto;
+    text-align: left;
+}
+
+/* Inputs */
+.form-pasajes select,
+.form-pasajes input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
+
+
+
+
+
+/* Boton */
+.btn-primario {
+    display: inline-block;
+    background-color: #4fb3ff; 
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+    transition: 0.3s ease;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primario:hover {
+    background-color: #1d90e0; /* tono más oscuro al pasar el mouse */
+    transform: translateY(-2px);
+}
+
+.btn-primario:active {
+    transform: translateY(0);
+    background-color: #1674b3;
+}
+
+
+/* Botón Volver - estilo acompaña pero no compite */
+.btn-volver {
+    display: inline-block;
+    padding: 10px 22px;
+    background: #e5e5e5;
+    color: #333;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 15px;
+    margin-top: 10px;
+    transition: 0.2s ease-in-out;
+}
+
+.btn-volver:hover {
+    background: #cacaca;
+    color: #000;
+}
+
+/* Para colocarlos alineados sin que se vean muy largos */
+.botones-flex {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+/* Contenedor general */
+.compra-apartado {
+    margin-bottom: 25px;
+}
+
+.horarios-disponibles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+/* Cada botón-horario */
+.horario-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4f4f4;
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.25s;
+    font-size: 15px;
+}
+
+
+
+/* Ocultar el radio real */
+.horario-btn input[type="radio"] {
+    display: none;
+}
+
+/* Efecto cuando es seleccionado */
+.horario-btn input[type="radio"]:checked + span {
+    background: #ffa600;
+    color: white;
+    padding: 10px 16px;
+}
+
+/* Texto dentro del botón */
+.horario-btn span {
+    pointer-events: none;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
